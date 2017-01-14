@@ -416,14 +416,14 @@ hr {
         font-size: 10px; } }
   .tile.tile-Turku .tile-inner {
     color: white;
-    background: black;
+    background: #ea474b;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-Länsi .tile-inner {
-    color: white;
-    background: black;
+    color: yellow;
+    background: #0f4f79;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
