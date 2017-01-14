@@ -161,12 +161,12 @@ GameManager.prototype.move = function (direction) {
     if (b == "VSO" && a == "ÅN") return "Turku";
     if (a == "Turku" && b == "SatO") return "Länsi";
     if (b == "Turku" && a == "SatO") return "Länsi";
-    if (a == "Länsi" && b == "Länsi") return 512;
+    if (a == "Länsi" && b == "Länsi") return 1024;
     if (a == 32) {
       var r = Math.random();
-      if (r < 0.20) {
+      if (r < 1/3) {
         return "SatO"
-      } else if (r < 0.60) {
+      } else if (r < 2/3) {
         return "VSO"
       } else {
         return "ÅN";

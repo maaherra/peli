@@ -394,36 +394,55 @@ hr {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-SatO .tile-inner {
-    color: yellow;
-    background: #0f4f79;
+    color: transparent;
+	background-image: url("/images/sato.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-VSO .tile-inner {
-    color: white;
-    background: #ea474b;
+    color: transparent;
+	background-image: url("/images/vso.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-ÅN .tile-inner {
-    color: #0f4f79;
-    background: white;
+    color: transparent;
+	background-image: url("/images/an.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-Turku .tile-inner {
-    color: white;
-    background: #ea474b;
+    color: transparent;
+	background-color: gold;
+	/* background-color: #ea474b; */
+	background-image: url("/images/an.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
   .tile.tile-Länsi .tile-inner {
-    color: yellow;
-    background: #0f4f79;
+    color: transparent;
+	background-color: gold;
+	/* background-color: #ea474b; */
+	background-image: url("/images/tplsinetti.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
