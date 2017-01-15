@@ -126,6 +126,29 @@ GameManager.prototype.moveTile = function (tile, cell) {
   tile.updatePosition(cell);
 };
 
+var getNextOsakunta = (function () {
+  var xs = [];
+
+  function res() {
+    if (xs.length === 0) {
+      var rs = {
+        "SatO": Math.random(),
+        "VSO": Math.random(),
+        "ÅN": Math.random(),
+      };
+      xs = ["SatO", "VSO", "ÅN"];
+      xs.sort(function (a, b) {
+        return rs[a] < rs [b];
+      });
+    }
+
+    return xs.pop();
+  }
+
+  return res;
+})();
+
+
 // Move tiles on the grid in the specified direction
 GameManager.prototype.move = function (direction) {
   // 0: up, 1: right, 2: down, 3: left
@@ -150,7 +173,7 @@ GameManager.prototype.move = function (direction) {
     if (b == "Turku" && a == "SatO") return true;
     if (a == "Länsi" && b == "Länsi") return true;
     return false;
-  } 
+  }
 
   function nextValue(a, b) {
     if (!mergeable(a, b)) return a;
@@ -163,14 +186,7 @@ GameManager.prototype.move = function (direction) {
     if (b == "Turku" && a == "SatO") return "Länsi";
     if (a == "Länsi" && b == "Länsi") return 1024;
     if (a == 32) {
-      var r = Math.random();
-      if (r < 1/3) {
-        return "SatO"
-      } else if (r < 2/3) {
-        return "VSO"
-      } else {
-        return "ÅN";
-      }
+      return getNextOsakunta();
     } else  {
       return a * 2;
     }
