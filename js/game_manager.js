@@ -148,6 +148,16 @@ var getNextOsakunta = (function () {
   return res;
 })();
 
+function mergeable(a, b) {
+  if (typeof a === "number" &&  a === b) return true;
+  if (a == "VSO" && b == "ÅN") return true;
+  if (b == "VSO" && a == "ÅN") return true;
+  if (a == "Turku" && b == "SatO") return true;
+  if (b == "Turku" && a == "SatO") return true;
+  if (a == "Länsi" && b == "Länsi") return true;
+  return false;
+}
+
 
 // Move tiles on the grid in the specified direction
 GameManager.prototype.move = function (direction) {
@@ -164,16 +174,6 @@ GameManager.prototype.move = function (direction) {
 
   // Save the current tile positions and remove merger information
   this.prepareTiles();
-
-  function mergeable(a, b) {
-    if (typeof a === "number" &&  a === b) return true;
-    if (a == "VSO" && b == "ÅN") return true;
-    if (b == "VSO" && a == "ÅN") return true;
-    if (a == "Turku" && b == "SatO") return true;
-    if (b == "Turku" && a == "SatO") return true;
-    if (a == "Länsi" && b == "Länsi") return true;
-    return false;
-  }
 
   function nextValue(a, b) {
     if (!mergeable(a, b)) return a;
@@ -320,7 +320,7 @@ GameManager.prototype.tileMatchesAvailable = function () {
 
           var other  = self.grid.cellContent(cell);
 
-          if (other && other.value === tile.value) {
+          if (other && mergeable(other.value,tile.value)) {
             return true; // These two tiles can be merged
           }
         }
